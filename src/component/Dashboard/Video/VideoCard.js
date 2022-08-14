@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-
+import ReactPlayer from 'react-player'
 const VideoCard = (props) => {
   const { name, _id,title, link } = props.item;
   const [myNotes, setMyNotes] = useState([]);
@@ -27,7 +27,7 @@ const VideoCard = (props) => {
     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6">
       <div className="card-style-3 mb-30">
         <div class="card-image">
-        <iframe width="500" height="300" src={`https://www.youtube.com/embed/${link}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <ReactPlayer width="450px" controls = {true} url={link} />
         </div>
         <div className="card-content">
           <h4>
